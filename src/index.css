@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+  overflow-x: hidden;
+}
+
+html.dark body {
+  background: #020617;
+  color: #e2e8f0;
+}
+
+/* 3D canvas sits fixed behind all content */
+.scene-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.content-layer {
+  position: relative;
+  z-index: 10;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.5);
+  border-radius: 999px;
+}
+
+/* Glass card base, used across GlassUI components */
+.glass-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+}
+
+html.dark .glass-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
